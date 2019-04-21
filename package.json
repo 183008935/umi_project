@@ -4,10 +4,9 @@
   "description": "简单应用",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "umi dev",
-    "dev": "umi dev",
-    "build": "umi build"
+    "build": "umi build",
+    "dev": "umi dev"
   },
   "repository": {
     "type": "git",
