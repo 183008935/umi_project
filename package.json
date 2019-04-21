@@ -22,5 +22,8 @@
   "devDependencies": {
     "umi": "^2.6.14",
     "umi-plugin-react": "^1.7.4"
+  },
+  "dependencies": {
+    "antd": "^3.16.3"
   }
 }
