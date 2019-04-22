@@ -6,7 +6,7 @@ import Link from "umi/link";
 import { connect } from 'dva';
 export default connect()(({ dispatch }) => {
   return (
-  <div style={{marginTop:'5rem'}}> 
+  <div  style={{margin:'7rem'}}> 
     <Result
         type="error"
         title="404 Not Found"

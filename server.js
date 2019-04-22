@@ -64,12 +64,9 @@ export default  {
     '/api/users':app.get((req,res,next)=>{
         apps.find({},(err,data)=>{
             if (err)
-                  res.send(err);
-              res.json(data);
+            res.send(err);
+            res.json(data);
         })
 
     })
-
-  
-  
   }

@@ -38,15 +38,17 @@ const { SubMenu } = Menu;
         </Sider>
         <Layout >
            <div className={styles.content}>
-            <Content style={{ padding:'1rem',background: "#fff", minHeight: '26rem' }}>
+            <Content style={{ padding:'1rem',background: "#fff", minHeight: '33rem' }}>
                 {this.props.children}
             </Content>
           </div>
         </Layout>
       </Layout>
-        <Footer style={{ textAlign: 'center',background:'#0b1836',color:'#fff'}}>
+      <Layout >
+        <Footer style={{ textAlign: 'center',  width: '100%',background:'#0b1836',color:'#fff',position:'absolute',bottom:0}}>
         发现 | 帮助中心 | 数据安全 |关于我们 | 服务协议 | 反馈
         </Footer>
+        </Layout>
       </Layout>
     )
   }

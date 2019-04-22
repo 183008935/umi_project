@@ -32,7 +32,7 @@ class Index extends Component {
     const { user,loading } = this.props;
     return (
       <div>
-         <Table
+        <Table
         rowKey="key"
         dataSource={user}
         columns={this.getTableColumns()}
