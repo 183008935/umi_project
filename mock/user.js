@@ -1,3 +1,33 @@
+let data = [
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      enable: 'true',
+    },
+    {
+      key: '2',
+      name: 'Jim Green',
+      age: 42,
+      enable: 'true',
+    },
+    {
+      key: '3',
+      name: 'Joe Black',
+      age: 32,
+      enable: 'false',
+    },
+  ]
+export default {
+    'get /api/users': function (req, res, next) {
+          res.json({
+            result: data,
+          })
+      },
+  };
+
+
+
 // // 代码中会兼容本地 service mock 以及部署站点的静态数据
 // const data = [
 //     {

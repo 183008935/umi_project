@@ -3,18 +3,15 @@ import { connect } from 'dva';
 import { Table, Tag, Popconfirm, Divider } from 'antd';
 const colorMap = new Map([["true", 'green'], ["false", 'red']]);
 const enableMap = new Map([["true", '休假中'], ["false", '工作中']]);
-@connect(({ user, loading }) => ({ user, loading: loading.effects['user/queryUser'] }))
+@connect(({ user, loading }) => ({ user:user.userList, loading: loading.effects['user/queryUser'] }))
 class Index extends Component {  
-
  componentDidMount() {
    this.props.dispatch({
-       type:'user/queryUsers'
+       type:'user/queryList'
    })
  }
- 
   render() {
-    const {  user } = this.props;
-    console.log(this.props,"!")
+    const { user } = this.props;
     return (
       <div>
          <Table
@@ -42,16 +39,16 @@ class Index extends Component {
           </div>
         ),
         // eslint-disable-next-line arrow-body-style
-        onCell: (record, index) => {
-          return {
-            onMouseEnter: () => {
-              this.onMouseEnter(record, index);
-            },
-            onMouseLeave: () => {
-              this.onMouseLeave();
-            },
-          };
-        },
+        // onCell: (record, index) => {
+        //   return {
+        //     onMouseEnter: () => {
+        //       this.onMouseEnter(record, index);
+        //     },
+        //     onMouseLeave: () => {
+        //       this.onMouseLeave();
+        //     },
+        //   };
+        // },
       },
       {
         title: '工作状态',

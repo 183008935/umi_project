@@ -26,14 +26,13 @@ const { SubMenu } = Menu;
       </Carousel> */}
           <Menu
             mode="inline"
-            defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
           >
             <SubMenu key="sub1" 
               title={<span><Icon type="global" />总项目</span>}>
               <Menu.Item key="1"><Link to="/">项目管理</Link></Menu.Item>
-              <Menu.Item key="2"><Link to="/User">用户列表</Link></Menu.Item>
-              <Menu.Item key="3"><Link to="/puzzlecards">变更用户</Link></Menu.Item>
+              <Menu.Item key="2"><Link to="/user">用户列表</Link></Menu.Item>
+              <Menu.Item key="3"><Link to="/cards">变更用户</Link></Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
