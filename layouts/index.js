@@ -2,7 +2,7 @@ import { Component } from 'react';
 import Link from 'umi/link';
 import { Layout, Menu, Icon, Row, Col, Progress,Carousel} from 'antd';
 import Header from './Header'
-import styles from "./index.css";
+import styles from "./index.less";
 const { Footer, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 // const lunboSetting = {

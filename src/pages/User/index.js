@@ -11,7 +11,7 @@ class Index extends Component {
    })
  }
   render() {
-    const { user } = this.props;
+    const { user,loading } = this.props;
     return (
       <div>
          <Table
@@ -19,6 +19,7 @@ class Index extends Component {
         dataSource={user}
         columns={this.getTableColumns()}
         pagination={false}
+        loading={loading}
       />
       </div>
     )

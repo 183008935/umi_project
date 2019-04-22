@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Layout,Icon, Row, Col, Progress} from 'antd';
 const { Header, } = Layout;
 import Util from '../../src/components/timeDisplay';
-import styles from "./index.css";
+import styles from "./index.less";
 export default class Index extends Component {
 state = {}
   componentWillMount() {
@@ -18,7 +18,7 @@ state = {}
   }
   render() {
     return (
-        <Header style={{ background: '#0b1836', textAlign: 'center', padding: 0 }}>
+        <Header style={{ background: '#07031d', textAlign: 'center', padding: 0 }}>
         <Row>
           <Col span={8} pull={2} className={styles.normal}>
             <div className={styles.title}>
@@ -50,7 +50,7 @@ state = {}
           </div>
           </Col>
           <Col span={3} push={2} className={styles.titleRight}>
-            <span style={{ fontSize: '.1rem', color: '#fff' }}><Icon type="user" style={{ fontSize: '1rem' }} />某某某</span>
+            <span style={{ fontSize: '.1rem', color: '#fff' }}><Icon type="user" style={{ fontSize: '1rem' }} />大神:田家豪</span>
             <div style={{ fontSize: '.2rem', lineHeight: 1 }}>{this.state.sysTime}</div>
           </Col>
         </Row>
