@@ -29,7 +29,6 @@ class Index extends Component {
       {
         title: '编号',
         dataIndex: 'key',
-        key: 'key',
       },
       {
         title: '姓名',
