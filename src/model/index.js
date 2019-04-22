@@ -1,4 +1,5 @@
-import { queryUsers } from '../services/user'
+import { queryUsers,deleteUser } from '../services/user'
+import { message } from 'antd';
 
 export default {
 
@@ -11,10 +12,23 @@ export default {
 
   effects: {
     *queryList({ _ }, { call, put }) {
-      const res = yield call(queryUsers);
-      console.log('queryUsers');
-      console.log(res);
-      yield put({ type: 'saveList', payload: { userList: res.result } });
+      try { // 加入 try catch 捕获抛错
+        const res = yield call(queryUsers);
+        yield put({ type: 'saveList', payload: { userList: res.result } });
+      } catch (e) {
+        message.error('数据获取失败'); // 打印错误信息
+      }  
+    },
+    *deleteUser({ payload,callback }, { call, put }) {
+      try { // 加入 try catch 捕获抛错
+        const response = yield call(deleteUser, payload );
+        if (callback && typeof callback === 'function') {
+          callback(response)
+        }
+        
+      } catch (e) {
+        message.error('数据获取失败'); // 打印错误信息
+      }  
     },
   },
 

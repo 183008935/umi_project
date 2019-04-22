@@ -23,7 +23,10 @@ export default {
       routes: [
         { path: '/',component: './index' },
         { path: 'user',component: './User' },
-        { path: 'cards', component: './changeUser' }
+        { path: 'cards', component: './changeUser' },
+        {
+          component: './404',
+        },
       ]
     }],
     proxy: {

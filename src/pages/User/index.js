@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'dva';
-import { Table, Tag, Popconfirm, Divider } from 'antd';
+import { Table, Tag, Popconfirm, Divider,message } from 'antd';
 const colorMap = new Map([["true", 'green'], ["false", 'red']]);
 const enableMap = new Map([["true", '休假中'], ["false", '工作中']]);
 @connect(({ user, loading }) => ({ user:user.userList, loading: loading.effects['user/queryUser'] }))
@@ -10,6 +10,24 @@ class Index extends Component {
        type:'user/queryList'
    })
  }
+ /**
+    * 删除
+    */
+   onStatusClick = (record) =>{
+    const { dispatch } = this.props;
+      dispatch({
+          type: 'user/deleteUser',
+          payload: record.key,
+          callback:(response=>{
+            if (response) {
+              dispatch({type:'user/queryList'})
+              message.success('删除成功')
+            } else {
+              message.error('删除失败')
+            }
+          })
+      })
+  }
   render() {
     const { user,loading } = this.props;
     return (
