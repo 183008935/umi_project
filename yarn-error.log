@@ -1,0 +1,55 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add dva-cli -g
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  10.15.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: EINVAL: invalid argument, unlink '/Users/mac./Desktop/umi_project/node_modules/path-to-regexp/node_modules/isarray'
+
+npm manifest: 
+  {
+    "name": "umi_project",
+    "version": "1.0.0",
+    "description": "简单应用",
+    "main": "index.js",
+    "scripts": {
+      "start": "umi dev",
+      "build": "umi build",
+      "dev": "umi dev"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/183008935/umi_project.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/183008935/umi_project/issues"
+    },
+    "homepage": "https://github.com/183008935/umi_project#readme",
+    "devDependencies": {
+      "dva": "^2.4.1",
+      "umi": "^2.6.14",
+      "umi-plugin-react": "^1.7.4"
+    },
+    "dependencies": {
+      "antd": "^3.16.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

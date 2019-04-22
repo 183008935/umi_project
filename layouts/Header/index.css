@@ -1,0 +1,19 @@
+.normal {
+    font-family: Georgia, sans-serif;
+    text-align: center;
+}
+.title {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #faa02b;
+    background: #0b1836 url(../../public/carousel-img/4.gif) no-repeat ;
+    background-size:19.1rem 4rem
+  }
+  .titleRight {
+      line-height:33px;
+      color:#fff;
+      padding-top:.3rem;  
+  }
+
+  

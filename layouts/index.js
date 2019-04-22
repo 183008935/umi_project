@@ -1,69 +1,55 @@
 import { Component } from 'react';
-import { Layout, Menu, Icon, Row, Col, Progress} from 'antd';
-import Util from '../src/components/timeDisplay'
+import Link from 'umi/link';
+import { Layout, Menu, Icon, Row, Col, Progress,Carousel} from 'antd';
+import Header from './Header'
 import styles from "./index.css";
-const { Header, Footer, Sider, Content } = Layout;
-export default class BasicLayout extends Component {
-  state = {}
-  componentWillMount() {
-    // if (this.props.location.pathname === '/login') {
-    //   return <SimpleLayout>{ this.props.children }</SimpleLayout>
-    // }
-    setInterval(() => {
-      let sysTime = Util.formateDate(new Date().getTime());
-      this.setState({
-        sysTime
-      })
-    }, 1000)
-
-  }
+const { Footer, Sider, Content } = Layout;
+const { SubMenu } = Menu;
+// const lunboSetting = {
+//     dots: false,
+//     lazyLoad: true,
+//     autoplay:true
+//    };
+ class BasicLayout extends Component {
+  
   render() {
     return (
       <Layout>
-        <Header style={{ background: '#1a1957', textAlign: 'center', padding: 0 }}>
-          <Row>
-            <Col span={7} pull={1} className={styles.normal}>
-              <div className={styles.title}>
-                <img src="http://favicon.byi.pw/?url=lan.com" alt="标题"
-                  style={{ width: '1.2rem', marginRight: 10, paddingBottom: 6 }} />空弦 -- 等待是一种服务</div>
-            </Col>
-            <Col className={styles.titleConent} span={11} pull={2}>
-            <div>
-            <Progress type="circle"
-             percent={100} 
-             format={() => <span style={{fontSize:'.1rem',color:'#fff'}}>首页内容</span>}
-             strokeColor={'#faa02b'}
-             width={62}
-             strokeWidth={3}
-             />
-              <Progress 
-              style={{marginLeft:'2rem'}}
-             type="circle"
-             percent={100} 
-             format={() => <span style={{fontSize:'.1rem',color:'#fff'}}>管理内容</span>}
-             width={62}
-             strokeWidth={3}
-             />
-            </div>
-           
-            </Col>
-            <Col span={6} push={1} className={styles.titleRight}>
-              <span style={{ maiginRight: '.2rem', fontSize: '.1rem', color: '#fff' }}><Icon type="user" style={{ fontSize: '1rem' }} />某某某</span>
-              <div style={{ fontSize: '.2rem', lineHeight: 1 }}>{this.state.sysTime}</div>
-            </Col>
-          </Row>
-
-        </Header>
+         <Header/>
+        <Layout>
+      <Sider width={200} style={{ background: '#fff' }}>
+      <div key={1} className={styles.Menu_title}>空弦世界</div>
+      {/* <Carousel  {...lunboSetting} ref={el => (this.slider = el)}>
+       
+        <img src={img3}  className ={styles.imgs} key={2}/>
+        <img src={png2}  className ={styles.imgs} key={3}/>   
+      </Carousel> */}
+          <Menu
+            mode="inline"
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
+          >
+            <SubMenu key="sub1" 
+              title={<span><Icon type="global" />总项目</span>}>
+              <Menu.Item key="1"><Link to="/">项目管理</Link></Menu.Item>
+              <Menu.Item key="2"><Link to="/User">用户列表</Link></Menu.Item>
+              <Menu.Item key="3"><Link to="/puzzlecards">变更用户</Link></Menu.Item>
+            </SubMenu>
+          </Menu>
+        </Sider>
         <Layout >
-
-          {/* <Content style={{ margin: '24px 16px 0' }}>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-              {this.props.children}
-            </div>
-          </Content> */}
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+           <div className={styles.content}>
+            <Content style={{ padding:'1rem',background: "#fff", minHeight: '26rem' }}>
+                {this.props.children}
+            </Content>
+          </div>
         </Layout>
+      </Layout>
+        <Footer style={{ textAlign: 'center',background:'#0b1836',color:'#fff'}}>
+        发现 | 帮助中心 | 数据安全 |关于我们 | 服务协议 | 反馈
+        </Footer>
       </Layout>
     )
   }
 }
+export default BasicLayout
