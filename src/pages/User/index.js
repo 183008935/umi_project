@@ -3,7 +3,7 @@ import { connect } from 'dva';
 import { Table, Tag, Popconfirm, Divider,message } from 'antd';
 const colorMap = new Map([["true", 'green'], ["false", 'red']]);
 const enableMap = new Map([["true", '休假中'], ["false", '工作中']]);
-@connect(({ user, loading }) => ({ user:user.userList, loading: loading.effects['user/queryUser'] }))
+@connect(({ user, loading }) => ({ user:user.userList, loading: loading.effects['user/deleteUser']}))
 class Index extends Component {  
  componentDidMount() {
    this.props.dispatch({

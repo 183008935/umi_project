@@ -38,15 +38,17 @@ const { SubMenu } = Menu;
         </Sider>
         <Layout >
            <div className={styles.content}>
-            <Content style={{ padding:'1rem',background: "#fff", minHeight: '33rem' }}>
+            <Content style={{ padding:'1rem',background: "#fff", minHeight: '32rem' }}>
                 {this.props.children}
             </Content>
           </div>
         </Layout>
       </Layout>
       <Layout >
-        <Footer style={{ textAlign: 'center',  width: '100%',background:'#0b1836',color:'#fff',position:'absolute',bottom:0}}>
+        <Footer style={{ textAlign: 'center',  width: '100%',background:'#0b1836',color:'#fff',lineHeight:'1rem'}}>
         发现 | 帮助中心 | 数据安全 |关于我们 | 服务协议 | 反馈
+        <br/>
+        <a href='https://github.com/183008935/umi_app' target="_blank" style={{fontSize:'.1rem'}}> &copy;2019-04-22 田家豪</a>
         </Footer>
         </Layout>
       </Layout>
