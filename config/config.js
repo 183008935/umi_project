@@ -20,6 +20,7 @@ export default {
           "react-dom": "window.ReactDOM"
         },
         // 这里暂时还没有添加配置，该插件还不会有作用，我们会在后面的课程按照需求打开相应的配置
+       
       }],
 
     ],
@@ -31,7 +32,8 @@ export default {
       routes: [
         { path: '/',component: './index' },
         { path: '/user',component: './User' },
-        { path: '/cards', component: './changeUser' }
+        { path: '/cards', component: './changeUser' },
+        { path: '/todo', component: './todo' }
       ]
     }],
     proxy: {
