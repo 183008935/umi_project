@@ -29,8 +29,6 @@ let data = [
     },
     'delete /api/cards/:id': function (req, res, next) {
       data = data.filter(v => v.id !== parseInt(req.params.id));
-      console.log(req.params.id);
-      console.log(data);
       setTimeout(() => {
         res.json({
           success: true,

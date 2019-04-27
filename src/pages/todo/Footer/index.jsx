@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 import styles from './index.css';
 import Link from 'umi/link';
 class Footer extends Component {
+    changeView=(value)=>{
+        this.props.changeView(value)
+       }
     render() {
+        const { view }= this.props;
+        
         return (
             <footer className={styles.footer}>
                <span className={styles.todocount}>
@@ -11,37 +16,37 @@ class Footer extends Component {
                </span>
                <ul className={styles.filters}>
                <li>
-                        <Link  
+                        {/* <Link  
                         to="/"   
                         className={styles.selected}
-                        >所有</Link>
-                     {/* <a 
+                        >所有</Link> */}
+                     <a 
                      href="#/all"
-                     className={view==='all'?'selected':''}
-                     onClick={ev=>{changeView('all')}}
-                     >all</a> */}
+                     className={view==='all'?styles.selected:''}
+                     onClick={ev=>{this.changeView('all')}}
+                     >all</a>
                  </li>
                  <li>
-                 <Link
+                 {/* <Link
                         to="/active"
                         className={styles.selected}
-                        >未完成</Link>
-                     {/* <a 
+                        >未完成</Link> */}
+                     <a 
                      href="#/active"
-                     className={view==='active'?'selected':''}
-                     onClick={ev=>{changeView('active')}}
-                     >Active</a> */}
+                     className={view==='active'?styles.selected:''}
+                     onClick={ev=>{this.changeView('active')}}
+                     >Active</a>
                  </li>
                  <li>
-                 <Link
+                 {/* <Link
                         to="/completed"
                         className={styles.selected}
-                        >已完成</Link>
-                     {/* <a
+                        >已完成</Link> */}
+                     <a
                       href="#/Completed"
-                      className={view==='completed'?'selected':''}
-                      onClick={ev=>{changeView('completed')}}
-                      >Completed</a> */}
+                      className={view==='completed'?styles.selected:''}
+                      onClick={ev=>{this.changeView('completed')}}
+                      >Completed</a>
                  </li>
                </ul>
                <button className={styles.clearcompleted}

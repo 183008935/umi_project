@@ -47,13 +47,13 @@ const { Content, Sider } = Layout;
                   </span>
                 }
               >
-                <Menu.Item key="4">
+                <Menu.Item key="5">
                   <Link to="/">项目列表</Link>
                 </Menu.Item>
-                <Menu.Item key="5">
+                <Menu.Item key="6">
                   <Link to="/">项目客户</Link>
                 </Menu.Item>
-                <Menu.Item key="6">
+                <Menu.Item key="7">
                   <Link to="/">等级列表</Link>
                 </Menu.Item>
               </SubMenu>
@@ -66,16 +66,16 @@ const { Content, Sider } = Layout;
                   </span>
                 }
               >
-                <Menu.Item key="7">
+                <Menu.Item key="8">
                   <Link to="/">行政部门</Link>
                 </Menu.Item>
-                <Menu.Item key="8">
+                <Menu.Item key="9">
                   <Link to="/">人事部门</Link>
                 </Menu.Item>
-                <Menu.Item key="9">
+                <Menu.Item key="10">
                   <Link to="/">财务部门</Link>
                 </Menu.Item>
-                <Menu.Item key="10">
+                <Menu.Item key="11">
                   <Link to="/">后勤部门</Link>
                 </Menu.Item>
               </SubMenu>

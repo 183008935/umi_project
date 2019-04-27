@@ -29,9 +29,6 @@ class CardsPage extends Component {
 
   render() {
     const { cardsList = [] } = this.props;
-    console.log('cardsList');
-    console.log(cardsList);
-
     return (
       <div>
         {cardsList.map(v => <Card

@@ -26,7 +26,7 @@ class IndexPage extends Component {
   
   
    render() {
-    console.log(this.props,"!")
+  
     return (
       <Result
         type="success"
