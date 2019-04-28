@@ -75,8 +75,8 @@ class Index extends Component {
                rules: [{ required: true, message: '工作状态不能为空' }]
              })(
               <Select placeholder="请选择状态">
-          <Option value="true">工作中</Option>
-          <Option value="false">休假中</Option>
+          <Option value="false">工作中</Option>
+          <Option value="true">休假中</Option>
         </Select>
              )}
         </Form.Item> 

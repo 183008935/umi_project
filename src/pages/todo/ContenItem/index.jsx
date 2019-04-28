@@ -44,7 +44,7 @@ this.props.itemEditDone(todo,this.state.val) //这些都是为了修改内容
   render() {
     const { todo } =this.props
     let { inEdit }=this.state;
-    let itemClassName=todo.has?styles.completed:'';//用变量来控制什么时候编辑 
+    let itemClassName=todo.has?styles.completed:styles.li;//用变量来控制什么时候编辑 
 
     if(inEdit){itemClassName=`${itemClassName} ${styles.editing}` } //通过状态来控制什么时候可以编辑
     return (

@@ -33,7 +33,8 @@ export default {
         { path: '/',component: './index' },
         { path: '/user',component: './User' },
         { path: '/cards', component: './changeUser' },
-        { path: '/todo', component: './todo' }
+        { path: '/todo', component: './todo' },
+        { path: '/todoList', component: './todoList' },
       ]
     }],
     proxy: {
