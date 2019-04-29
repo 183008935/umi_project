@@ -18,14 +18,15 @@ import { connect } from 'dva';
         })
       }
       keyDownPost = (ev) => {
+        const { dispatch } = this.props;
         if (ev.keyCode !== 13) return;//回车事件
     
-        let { inputValue, todos } = this.state;
+        let { inputValue  } = this.state;
     
         let value = inputValue.trim(); //前后面的空格切掉
     
         if (value === "") { return }  //如果值是空的就不让添加
-    
+        
         let todo = {};  //声明一个数据 (添加的动作)，是一个对象。
     
         todo.id = new Date().getTime();   //给一个ID说明其身份
@@ -34,10 +35,20 @@ import { connect } from 'dva';
     
         todo.has = false;  //他的初始状态。
     
-        todos.push(todo);//新添加的对象todo添加到数组里
-    
-        this.setState({ // 更新状态
-          inputValue: '' //回车后清空
+        dispatch({
+            type: 'todoList/addTodo',
+            payload: todo,
+            callback:(response=>{
+              if (response) {
+                dispatch({type:'todoList/queryList'})
+                this.setState({ // 更新状态
+                    inputValue: '' //回车后清空
+                  })
+                message.success('操作成功')
+              } else {
+                message.error('操作失败')
+              }
+            })
         })
       }
     render() {

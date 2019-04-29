@@ -26,7 +26,7 @@ export default {
           callback(response)
         }        
       } catch (e) {
-        message.error('数据获取失败'); // 打印错误信息
+        message.success('添加成功'); // 打印错误信息
       }  
     },
     *deleteTodo({ payload,callback }, { call, put }) {

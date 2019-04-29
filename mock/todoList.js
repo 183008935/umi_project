@@ -21,7 +21,7 @@ export default  {
       })});
 }),
 //新增
-'post /api/users/addUser':app.post('/api/users/addUser',(req,res)=>{
+'post /api/todoList/addTodo':app.post('/api/todoList/addTodo',(req,res)=>{
   MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
     if (err) throw err;
     var dbo = db.db("app");

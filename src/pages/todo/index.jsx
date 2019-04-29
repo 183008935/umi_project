@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from './index.css';
 import ContenItem from './ContenItem';
 import Footer from './Footer'
-export default class index extends Component {
+export default class Index extends Component {
   state = {
     inputValue: '',
     todos: [],

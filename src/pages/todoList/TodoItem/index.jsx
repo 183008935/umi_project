@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from './index.less';
 import { connect } from 'dva';
 @connect()
- class TodoItem extends Component {
+class TodoItem extends Component {
   onDestroy = (record) =>{
      const { dispatch } = this.props;
           dispatch({
