@@ -64,5 +64,20 @@ export default  {
           db.close();
       });
   });
-  })
+  }),
+  'post /api/todoList/editTodoValue':app.post('/api/todoList/editTodoValue',(req,res)=>{
+    MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("app");
+      var id = {_id:ObjectId(req.body._id)};
+      var updateStr = {$set: { value: req.body.value }};
+      dbo.collection("todoList").updateOne(id, updateStr,function(err, result) {
+          if (err){
+            res.json({success:false})
+          }
+          res.json({success:true})
+          db.close();
+      });
+  });
+  }),
 }

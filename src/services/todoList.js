@@ -31,3 +31,12 @@ export  function editStatus(params) {
     body: params,
   });
 }
+/**
+ * 更新状态
+ */
+export  function editTodoValue(params) {
+  return xFetch(`/api/todoList/editTodoValue`, {
+    method: 'POST',
+    body: params,
+  });
+}

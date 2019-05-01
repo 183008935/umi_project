@@ -52,6 +52,17 @@ import { connect } from 'dva';
         })
       }
     render() {
+     const { todoList } = this.props;
+     let items=null,footer=null,itemsBox=null;
+          
+     items=todoList.map((elt,i)=>{  //改变这个数组
+        return (//接收一些props
+            <TodoItem
+              todos={elt}
+              key={i}
+            />
+        )
+    })
         return (
             <div className={styles.Html}>
             <div className={styles.Body}>
@@ -67,7 +78,17 @@ import { connect } from 'dva';
                 placeholder="请输入待办事项"
                 />
                 </header>
-                <TodoItem list={this.props.todoList}/>
+                <div className={styles.main}>
+                <input
+                type="checkbox"
+                className={styles.toggleAll}
+                // onChange={this.toggleAll}
+               />
+               <ul className={styles.todoList}>
+               {todoList.length>0?items:null}
+               </ul>
+                </div>
+              
                 </div>
              </div>
              <div style={{height:'200px',background:'#fff'}}></div>
