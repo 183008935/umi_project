@@ -18,16 +18,37 @@ class TodoItem extends Component {
               })
           })
       }
+      onToggle =(item)=>{
+        const { dispatch } = this.props;
+          dispatch({
+              type: 'todoList/editStatus',
+              payload: item,
+              callback:(response=>{
+                if (response) {
+                  dispatch({type:'todoList/queryList'})
+                  message.success('状态更新成功')
+                } else {
+                  message.error('状态更新失败')
+                }
+              })
+          })
+      }
     render() {
+
+      
         const { list } = this.props;
           let todos = list.map((item,index)=>{
-              return ( <li key={index}>
+            let itemClassName=item.has?styles.completed:'';//用变量来控制什么时候编辑 
+
+            //  if(inEdit){itemClassName+=' editing'} //通过状态来控制什么时候可以编辑
+ 
+              return ( <li key={index} className={itemClassName}>
                 <div className={styles.view}>
                 <input 
                  type="checkbox"
                  className={styles.toggle}
-               //   onChange={ev=>onToggle(todo)} // 传参数todo
-               //   checked={todo.has} 
+                 onChange={()=>this.onToggle(item)} // 传参数todo
+                 checked={item.has} 
                       />
                      <label 
                        // onDoubleClick={onEdit} //双击可以编辑

@@ -22,3 +22,12 @@ export  function deleteTodo(params) {
     body: params,
   });
 }
+/**
+ * 更新状态
+ */
+export  function editStatus(params) {
+  return xFetch(`/api/todoList/editStatus`, {
+    method: 'POST',
+    body: params,
+  });
+}

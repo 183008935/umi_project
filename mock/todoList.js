@@ -48,5 +48,21 @@ export default  {
             db.close();
         });
     });
-    })
+    }),
+    //更新
+'post /api/todoList/editStatus':app.post('/api/todoList/editStatus',(req,res)=>{
+    MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("app");
+      var id = {_id:ObjectId(req.body._id)};
+      var updateStr = {$set: { has: !req.body.has }};
+      dbo.collection("todoList").updateOne(id, updateStr,function(err, result) {
+          if (err){
+            res.json({success:false})
+          }
+          res.json({success:true})
+          db.close();
+      });
+  });
+  })
 }

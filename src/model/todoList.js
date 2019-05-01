@@ -1,4 +1,4 @@
-import { queryTodoList,deleteTodo,addTodo } from '../services/todoList'
+import { queryTodoList,deleteTodo,addTodo,editStatus } from '../services/todoList'
 import { message } from 'antd';
 
 export default {
@@ -37,6 +37,16 @@ export default {
         }
       } catch (e) {
         message.success('删除成功'); // 打印错误信息
+      }  
+    },
+    *editStatus({ payload,callback }, { call, put }) {
+      try { // 加入 try catch 捕获抛错
+      const response = yield call(editStatus,payload);
+        if (callback && typeof callback === 'function') {
+          callback(response)
+        }
+      } catch (e) {
+        message.success('更新状态成功'); // 打印错误信息
       }  
     },
   },
