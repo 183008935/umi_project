@@ -40,3 +40,11 @@ export  function editTodoValue(params) {
     body: params,
   });
 }
+/**
+ * 删除true的数据
+ */
+export  function deleteTrue() {
+  return xFetch(`/api/todoList/deleteTrue`,{
+    method: 'POST',
+  });
+}

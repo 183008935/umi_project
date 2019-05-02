@@ -49,6 +49,20 @@ export default  {
         });
     });
     }),
+    'post /api/todoList/deleteTrue':app.post('/api/todoList/deleteTrue',(req,res)=>{
+      MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("app");
+        var todoTrue = { has:true };
+        dbo.collection("todoList").remove(todoTrue, function(err, result) {
+            if (err){
+              res.json({success:false})
+            }
+            res.json({success:true})
+            db.close();
+        });
+    });
+    }),
     //更新
 'post /api/todoList/editStatus':app.post('/api/todoList/editStatus',(req,res)=>{
     MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
@@ -80,4 +94,5 @@ export default  {
       });
   });
   }),
+
 }

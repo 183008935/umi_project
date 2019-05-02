@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from './index.less';
 import TodoItem from './TodoItem';
 import { connect } from 'dva';
+import Footer from './Footer';
 @connect(({ todoList }) => ({ todoList:todoList.todoList,}))
  class TodoList extends Component {
     state={
@@ -60,6 +61,7 @@ import { connect } from 'dva';
             <TodoItem
               todos={elt}
               key={i}
+              
             />
         )
     })
@@ -76,6 +78,7 @@ import { connect } from 'dva';
                 className={styles.newTodo}
                 onKeyDown={(e) => this.keyDownPost(e)}
                 placeholder="请输入待办事项"
+
                 />
                 </header>
                 <div className={styles.main}>
@@ -88,10 +91,10 @@ import { connect } from 'dva';
                {todoList.length>0?items:null}
                </ul>
                 </div>
-              
+                <Footer todoList={todoList} view={this.state.view} changeView={(value)=>this.changeView(value)}/>
                 </div>
              </div>
-             <div style={{height:'200px',background:'#fff'}}></div>
+             <div style={{height:'100px',background:'#fff'}}></div>
             </div>
         )
     }
