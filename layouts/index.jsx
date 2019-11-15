@@ -1,12 +1,11 @@
-import { Component } from 'react';
-import Link from 'umi/link';
-import { Popconfirm, message, Menu, Icon, Layout } from 'antd';
-import Header from './Header'
+import { Icon, Layout, Menu } from "antd";
+import { Component } from "react";
+import Link from "umi/link";
+import Header from "./Header";
 import styles from "./index.less";
 const SubMenu = Menu.SubMenu;
 const { Content, Sider } = Layout;
- class BasicLayout extends Component {
-  
+class BasicLayout extends Component {
   render() {
     const { children } = this.props;
     return (
@@ -83,7 +82,7 @@ const { Content, Sider } = Layout;
           </Sider>
           <div className={styles.content}>
             <Content>
-              <div style={{ padding: 20, background: '#fff' }}>{children}</div>
+              <div style={{ padding: 20, background: "#fff" }}>{children}</div>
             </Content>
           </div>
         </Layout>
@@ -91,4 +90,4 @@ const { Content, Sider } = Layout;
     );
   }
 }
-export default BasicLayout
+export default BasicLayout;
