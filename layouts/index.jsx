@@ -14,7 +14,7 @@ const { Content, Sider } = Layout;
         <Header />
         <Layout>
           <Sider>
-            <div className={styles.Menu_title}> 空弦世界 </div>
+            <div className={styles.Menu_title}> 空弦世界 -ZJ</div>
             <Menu className={styles.Menu} mode="inline">
               <SubMenu
                 key="sub1"
